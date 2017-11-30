@@ -1,0 +1,86 @@
+* action=login (lg) *
+  Log in and get the authentication tokens. 
+  In the event of a successful log-in, a cookie will be attached
+  to your session. In the event of a failed log-in, you will not 
+  be able to attempt another log-in through this method for 5 seconds.
+  This is to prevent password guessing by automated password crackers
+
+This module only accepts POST requests
+Parameters:
+  lgname              - User Name
+  lgpassword          - Password
+  lgdomain            - Domain (optional)
+  lgtoken             - Login token obtained in first request
+
+* action=logout *
+  Log out and clear session data
+
+* action=block *
+  Block a user
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  user                - Username, IP address or IP range you want to block
+                        This parameter is required
+  token               - A block token previously obtained through the gettoken parameter or prop=info
+  gettoken            - If set, a block token will be returned, and no other action will be taken
+  expiry              - Relative expiry time, e.g. '5 months' or '2 weeks'. If set to 'infinite', 'indefinite' or 'never', the block will never expire.
+                        Default: never
+  reason              - Reason for block (optional)
+  anononly            - Block anonymous users only (i.e. disable anonymous edits for this IP)
+  autoblock           - Automatically block the last used IP address, and any subsequent IP addresses they try to login from
+  noemail             - Prevent user from sending e-mail through the wiki. (Requires the "blockemail" right.)
+  hidename            - Hide the username from the block log. (Requires the "hideuser" right.)
+  allowusertalk       - Allow the user to edit their own talk page (depends on $wgBlockAllowsUTEdit)
+  reblock             - If the user is already blocked, overwrite the existing block
+  watchuser           - Watch the user/IP's user and talk pages
+
+* action=unblock *
+  Unblock a user
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  id                  - ID of the block you want to unblock (obtained through list=blocks). Cannot be used together with user
+  user                - Username, IP address or IP range you want to unblock. Cannot be used together with id
+  token               - An unblock token previously obtained through the gettoken parameter or prop=info
+  gettoken            - If set, an unblock token will be returned, and no other action will be taken
+  reason              - Reason for unblock (optional)
+
+* action=userrights *
+  Add/remove a user to/from groups
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  user                - User name
+                        This parameter is required
+  add                 - Add the user to these groups
+                        Values (separate with '|'): bot, sysop, rollback, bureaucrat, staff, util, helper, vstf, bot-global, restricted-login,
+                            restricted-login-exempt, content-moderator, council, authenticated, voldev, vanguard,
+                            global-discussions-moderator, checkuser, threadmoderator, chatmoderator, content-reviewer,
+                            devboxpanel, translator, reviewer, fandom-editor, lookupuser, lookupcontribs
+  remove              - Remove the user from these groups
+                        Values (separate with '|'): bot, sysop, rollback, bureaucrat, staff, util, helper, vstf, bot-global, restricted-login,
+                            restricted-login-exempt, content-moderator, council, authenticated, voldev, vanguard,
+                            global-discussions-moderator, checkuser, threadmoderator, chatmoderator, content-reviewer,
+                            devboxpanel, translator, reviewer, fandom-editor, lookupuser, lookupcontribs
+  token               - A userrights token previously retrieved through list=users
+  reason              - Reason for the change
+                        Default: 
+
+* action=options *
+  Change preferences of the current user.
+  Only options which are registered in core or in one of installed extensions,
+  or as options with keys prefixed with 'userjs-' (intended to be used by user
+  scripts), can be set.
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  reset               - Resets preferences to the site defaults
+  change              - List of changes, formatted name=value (e.g. skin=monobook), value cannot contain pipe characters. If no value is given (not 
+                        even an equals sign), e.g., optionname|otheroption|..., the option will be reset to its default value
+  optionname          - A name of a option which should have an optionvalue set
+  optionvalue         - A value of the option specified by the optionname, can contain pipe characters

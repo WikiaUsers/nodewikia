@@ -1,0 +1,34 @@
+* action=abusefilterchecksyntax *
+  Check syntax of an AbuseFilter filter
+
+Parameters:
+  filter              - The full filter text to check syntax on
+                        This parameter is required
+
+* action=abusefilterevalexpression *
+  Evaluates an AbuseFilter expression
+
+Parameters:
+  expression          - The expression to evaluate
+                        This parameter is required
+
+* action=abusefilterunblockautopromote *
+  Unblocks a user from receiving autopromotions due to an abusefilter consequence
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  user                - Username of the user you want to unblock
+                        This parameter is required
+  token               - An edit token
+
+* action=abusefiltercheckmatch *
+  Check to see if an AbuseFilter matches a set of variables, editor logged AbuseFilter event.
+  vars, rcid or logid is required however only one may be used
+
+Parameters:
+  filter              - The full filter text to check for a match
+                        This parameter is required
+  vars                - JSON encoded array of variables to test against
+  rcid                - Recent change ID to check against
+  logid               - Abuse filter log ID to check against

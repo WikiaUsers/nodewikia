@@ -1,0 +1,80 @@
+* action=awcreminder *
+  Method called from TheSchwartz Queue to remind Wiki Creator about some options
+
+Parameters:
+  user_id             - user_id from user table
+  token               - secret token
+
+* action=fetchblob *
+  Fetch blob from blob store.
+
+Parameters:
+  store               - blob store
+  token               - secret token
+  id                  - identifier for blob
+
+* action=visualeditor *
+  Returns HTML5 for a page from the parsoid service.
+
+Parameters:
+  page                - The page to perform actions on.
+                        This parameter is required
+  format              - 
+                        One value: json, jsonfm
+                        Default: json
+  paction             - Action to perform
+                        This parameter is required
+                        One value: parse, parsefragment, serialize, serializeforcache, diff, getlanglinks
+  wikitext            - Wikitext to send to Parsoid to convert to HTML (paction=parsefragment)
+  basetimestamp       - When saving, set this to the timestamp of the revision that was edited. Used to detect edit conflicts.
+  starttimestamp      - When saving, set this to the timestamp of when the page was loaded. Used to detect edit conflicts.
+  oldid               - The revision number to use (defaults to latest version).
+  html                - HTML to send to Parsoid to convert to wikitext
+  cachekey            - For serialize or diff, use the result of a previous serializeforcache request with this key. Overrides html.
+  pst                 - Pre-save transform wikitext before sending it to Parsoid (paction=parsefragment)
+
+* action=visualeditoredit *
+  Save an HTML5 page to MediaWiki (converted to wikitext via the Parsoid service).
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  page                - The page to perform actions on.
+                        This parameter is required
+  token               - Edit token
+                        This parameter is required
+  wikitext            - 
+  basetimestamp       - When saving, set this to the timestamp of the revision that was edited. Used to detect edit conflicts.
+  starttimestamp      - When saving, set this to the timestamp of when the page was loaded. Used to detect edit conflicts.
+  needcheck           - When saving, set this parameter if the revision might have roundtrip problems. This will result in the edit being tagged.
+  oldid               - The revision number to use. Defaults to latest revision. Use 0 for new page.
+  minor               - Flag for minor edit.
+  watch               - 
+  html                - HTML to send to Parsoid in exchange for wikitext
+  summary             - Edit summary
+  cachekey            - Use the result of a previous serializeforcache request with this key.Overrides html.
+
+* prop=stashimageinfo (sii) *
+  Returns image information for stashed images
+
+Parameters:
+  siifilekey          - Key that identifies a previous upload that was stashed temporarily.
+  siiprop             - What image information to get:
+                         timestamp     - Adds timestamp for the uploaded version
+                         url           - Gives URL to the image and the description page
+                         size          - Adds the size of the image in bytes and the height, width and page count (if applicable)
+                         dimensions    - Alias for size
+                         sha1          - Adds SHA-1 hash for the image
+                         mime          - Adds MIME type of the image
+                         thumbmime     - Adds MIME type of the image thumbnail (requires url)
+                         metadata      - Lists EXIF metadata for the version of the image
+                         bitdepth      - Adds the bit depth of the version
+                        Values (separate with '|'): timestamp, url, size, dimensions, sha1, mime, thumbmime, metadata, bitdepth
+                        Default: timestamp|url
+  siiurlwidth         - If siiprop=url is set, a URL to an image scaled to this width will be returned.
+                        Default: -1
+  siiurlheight        - Similar to siiurlwidth. Cannot be used without siiurlwidth
+                        Default: -1
+  siiurlparam         - A handler specific parameter string. For example, pdf's 
+                        might use 'page15-100px'. siiurlwidth must be used and be consistent with siiurlparam
+                        Default: 

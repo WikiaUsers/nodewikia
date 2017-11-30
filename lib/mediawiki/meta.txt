@@ -1,0 +1,33 @@
+  Erroneous requests:    When erroneous requests are sent to the API, a HTTP header will be sent
+                         with the key "MediaWiki-API-Error" and then both the value of the
+                         header and the error code sent back will be set to the same value
+  
+                         In the case of an invalid action being passed, these will have a value
+                         of "unknown_action"
+  
+Parameters:
+  version             - When showing help, include version for each module
+  maxlag              - Maximum lag can be used when MediaWiki is installed on a database replicated cluster.
+                        To save actions causing any more site replication lag, this parameter can make the client
+                        wait until the replication lag is less than the specified value.
+                        In case of a replag error, a HTTP 503 error is returned, with the message like
+                        "Waiting for $host: $lag seconds lagged\n".
+                        See https://www.mediawiki.org/wiki/Manual:Maxlag_parameter for more information
+  smaxage             - Set the s-maxage header to this many seconds. Errors are never cached
+                        Default: 0
+  maxage              - Set the max-age header to this many seconds. Errors are never cached
+                        Default: 0
+  requestid           - Request ID to distinguish requests. This will just be output back to you
+  servedby            - Include the hostname that served the request in the results. Unconditionally shown on error
+
+*** *** *** *** *** *** *** *** *** *** *** *** *** ***  Permissions *** *** *** *** *** *** *** *** *** *** *** *** *** *** 
+
+* writeapi *
+  Use of the write API
+Granted to:
+  all, user, bot, staff
+
+* apihighlimits *
+  Use higher limits in API queries (Slow queries: 500 results; Fast queries: 5000 results). The limits for slow queries also apply to multivalue parameters.
+Granted to:
+  bot, sysop, staff, helper, vstf

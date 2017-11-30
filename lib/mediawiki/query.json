@@ -1,0 +1,1460 @@
+{
+    "prop": {
+        "info": {
+            "prefix": "in",
+            "continue": true,
+            "params": {
+                "token": {
+                    "type": "values",
+                    "possible": [
+                        "edit",
+                        "delete",
+                        "protect",
+                        "move",
+                        "block",
+                        "unblock",
+                        "email",
+                        "import",
+                        "watch"
+                    ]
+                }
+            },
+            "prop": [
+                "protection",
+                "talkid",
+                "watched",
+                "subjectid",
+                "url",
+                "readable",
+                "preload",
+                "displaytitle",
+                "views",
+                "revcount",
+                "created",
+                "redirect"
+            ],
+            "flags": [
+                "nolimit"
+            ]
+        },
+        "revisions": {
+            "prefix": "rv",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "startid": {
+                    "type": "number"
+                },
+                "endid": {
+                    "type": "number"
+                },
+                "tag": {
+                    "type": "string"
+                },
+                "expandtemplates": {
+                    "type": "boolean"
+                },
+                "generatexml": {
+                    "type": "boolean"
+                },
+                "parse": {
+                    "type": "boolean"
+                },
+                "section": {
+                    "type": "number"
+                },
+                "token": {
+                    "type": "values",
+                    "possible": [
+                        "rollback"
+                    ]
+                },
+                "diffto": {
+                    "type": "multiple",
+                    "types": [
+                        "number",
+                        "value"
+                    ],
+                    "possible": [
+                        "cur",
+                        "prev",
+                        "next"
+                    ]
+                },
+                "difftotext": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "ids",
+                "flags",
+                "timestamp",
+                "user",
+                "userid",
+                "size",
+                "sha1",
+                "comment",
+                "parsedcomment",
+                "content",
+                "tags"
+            ],
+            "flags": [
+                "newold",
+                "startend",
+                "user",
+                "excludeuser"
+            ]
+        },
+        "links": {
+            "prefix": "pl",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "titles": {
+                    "type": "array",
+                    "eltype": "string"
+                }
+            },
+            "flags": [
+                "generator",
+                "namespace",
+                "ascdesc"
+            ]
+        },
+        "iwlinks": {
+            "prefix": "iw",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "url": {
+                    "type": "boolean"
+                }
+            },
+            "flags": [
+                "title",
+                "prefix",
+                "ascdesc"
+            ]
+        },
+        "langlinks": {
+            "prefix": "ll",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "url": {
+                    "type": "boolean"
+                }
+            },
+            "flags": [
+                "lang",
+                "title",
+                "ascdesc"
+            ]
+        },
+        "images": {
+            "prefix": "im",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "images": {
+                    "type": "array",
+                    "eltype": "string"
+                }
+            },
+            "flags": [
+                "ascdesc"
+            ]
+        },
+        "imageinfo": {
+            "prefix": "ii",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "urlwidth": {
+                    "type": "number"
+                },
+                "urlheight": {
+                    "type": "number"
+                },
+                "metadataversion": {
+                    "type": "multiple",
+                    "types": [
+                        "number",
+                        "value"
+                    ],
+                    "possible": [
+                        "latest"
+                    ]
+                },
+                "urlparam": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "timestamp",
+                "user",
+                "userid",
+                "comment",
+                "parsedcomment",
+                "url",
+                "size",
+                "dimensions",
+                "sha1",
+                "mime",
+                "thumbmime",
+                "mediatype",
+                "metadata",
+                "archivename",
+                "bitdepth"
+            ],
+            "flags": [
+                "startend"
+            ]
+        },
+        "templates": {
+            "prefix": "tl",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "templates": {
+                    "type": "array",
+                    "eltype": "string"
+                }
+            },
+            "flags": [
+                "generator",
+                "namespace",
+                "ascdesc"
+            ]
+        },
+        "categories": {
+            "prefix": "cl",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "categories": {
+                    "type": "array",
+                    "eltype": "string"
+                }
+            },
+            "prop": [
+                "sortkey",
+                "timestamp",
+                "hidden"
+            ],
+            "show": [
+                "hidden"
+            ],
+            "flags": [
+                "generator",
+                "ascdesc"
+            ]
+        },
+        "extlinks": {
+            "prefix": "el",
+            "continue": "offset",
+            "limit": true,
+            "params": {
+                "protocol": {
+                    "type": "value",
+                    "possible": [
+                        "http",
+                        "https",
+                        "ftp",
+                        "irc",
+                        "ircs",
+                        "gopher",
+                        "telnet",
+                        "nntp",
+                        "worldwind",
+                        "mailto",
+                        "news",
+                        "svn",
+                        "git",
+                        "mms",
+                        "xmpp"
+                    ]
+                },
+                "query": {
+                    "type": "string"
+                }
+            }
+        },
+        "categoryinfo": {
+            "prefix": "ci",
+            "continue": true,
+            "flags": [
+                "nolimit"
+            ]
+        },
+        "duplicatefiles": {
+            "prefix": "df",
+            "continue": true,
+            "limit": true,
+            "flags": [
+                "generator",
+                "ascdesc"
+            ]
+        },
+        "pageprops": {
+            "prefix": "pp",
+            "continue": true,
+            "params": {
+                "prop": {
+                    "type": "string"
+                }
+            },
+            "flags": [
+                "nolimit"
+            ]
+        },
+        "globalusage": {
+            "prefix": "gu",
+            "limit": true,
+            "continue": true,
+            "params": {
+                "filterlocal": {
+                    "type": "boolean"
+                }
+            },
+            "prop": [
+                "url",
+                "pageid",
+                "namespace"
+            ]
+        },
+        "infobox": {
+            "prefix": "ib"
+        }
+    },
+    "list": {
+        "allimages": {
+            "prefix": "ai",
+            "continue": "from",
+            "limit": true,
+            "params": {
+                "minsize": {
+                    "type": "number"
+                },
+                "maxsize": {
+                    "type": "number"
+                },
+                "sha1": {
+                    "type": "string"
+                },
+                "sha1base36": {
+                    "type": "string"
+                },
+                "mime": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "timestamp",
+                "user",
+                "userid",
+                "comment",
+                "parsedcomment",
+                "url",
+                "size",
+                "dimensions",
+                "sha1",
+                "mime",
+                "thumbmime",
+                "mediatype",
+                "metadata",
+                "bitdepth"
+            ],
+            "flags": [
+                "fromto",
+                "prefix",
+                "generator",
+                "ascdesc"
+            ]
+        },
+        "allpages": {
+            "prefix": "ap",
+            "continue": "from",
+            "limit": true,
+            "params": {
+                "filterredir": {
+                    "type": "value",
+                    "possible": [
+                        "all",
+                        "redirects",
+                        "nonredirects"
+                    ]
+                },
+                "minsize": {
+                    "type": "number"
+                },
+                "maxsize": {
+                    "type": "number"
+                },
+                "prtype": {
+                    "type": "values",
+                    "possible": [
+                        "edit",
+                        "move",
+                        "upload"
+                    ]
+                },
+                "prlevel": {
+                    "type": "values",
+                    "possible": [
+                        "",
+                        "loggedin",
+                        "autoconfirmed",
+                        "sysop"
+                    ]
+                },
+                "prfiltercascade": {
+                    "type": "value",
+                    "possible": [
+                        "cascading",
+                        "noncascading",
+                        "all"
+                    ]
+                },
+                "filterlanglinks": {
+                    "type": "value",
+                    "possible": [
+                        "withlanglinks",
+                        "withoutlanglinks",
+                        "all"
+                    ]
+                },
+                "prexpiry": {
+                    "type": "value",
+                    "possible": [
+                        "indefinite",
+                        "definite",
+                        "all"
+                    ]
+                }
+            },
+            "flags": [
+                "fromto",
+                "prefix",
+                "generator",
+                "namespace",
+                "ascdesc"
+            ]
+        },
+        "alllinks": {
+            "prefix": "al",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "from": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "unique": {
+                    "type": "boolean"
+                }
+            },
+            "prop": [
+                "ids",
+                "title"
+            ],
+            "flags": [
+                "prefix",
+                "generator",
+                "namespace"
+            ]
+        },
+        "allcategories": {
+            "prefix": "ac",
+            "limit": true,
+            "continue": "from",
+            "params": {
+                "min": {
+                    "type": "number"
+                },
+                "max": {
+                    "type": "number"
+                }
+            },
+            "prop": [
+                "size",
+                "hidden",
+                "id"
+            ],
+            "flags": [
+                "fromto",
+                "prefix",
+                "generator",
+                "ascdesc"
+            ]
+        },
+        "allusers": {
+            "prefix": "au",
+            "continue": "from",
+            "limit": true,
+            "params": {},
+            "prop": [
+                "registration"
+            ],
+            "flags": [
+                "fromto",
+                "prefix",
+                "ascdesc"
+            ]
+        },
+        "backlinks": {
+            "prefix": "bl",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "filterredir": {
+                    "type": "value",
+                    "possible": [
+                        "all",
+                        "redirects",
+                        "nonredirects"
+                    ]
+                }
+            },
+            "flags": [
+                "count",
+                "redirect",
+                "title",
+                "generator",
+                "namespace"
+            ]
+        },
+        "blocks": {
+            "prefix": "bk",
+            "continue": "start",
+            "limit": true,
+            "params": {
+                "ids": {
+                    "type": "array",
+                    "eltype": "number"
+                },
+                "users": {
+                    "type": "array",
+                    "eltype": "string"
+                },
+                "ip": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "id",
+                "user",
+                "userid",
+                "by",
+                "byid",
+                "timestamp",
+                "expiry",
+                "reason",
+                "range",
+                "flags"
+            ],
+            "show": [
+                "account",
+                "temp",
+                "ip",
+                "range"
+            ],
+            "flags": [
+                "startend",
+                "ascdesc"
+            ]
+        },
+        "categorymembers": {
+            "prefix": "cm",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "pageid": {
+                    "type": "number",
+                    "require": [
+                        "title"
+                    ]
+                },
+                "type": {
+                    "type": "values",
+                    "possible": [
+                        "page",
+                        "subcat",
+                        "file"
+                    ]
+                },
+                "sort": {
+                    "type": "values",
+                    "possible": [
+                        "sortkey",
+                        "timestamp"
+                    ]
+                },
+                "dir": {
+                    "type": "value",
+                    "possible": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                "startsortkey": {
+                    "type": "string"
+                },
+                "endsortkey": {
+                    "type": "string"
+                },
+                "startsortkeyprefix": {
+                    "type": "string"
+                },
+                "endsortkeyprefix": {
+                    "type": "string"
+                }
+            },
+            "flags": [
+                "startend",
+                "title",
+                "generator",
+                "namespace"
+            ]
+        },
+        "deletedrevs": {
+            "prefix": "dr",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "from": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "unique": {
+                    "type": "boolean"
+                }
+            },
+            "prop": [
+                "revid",
+                "parentid",
+                "user",
+                "userid",
+                "comment",
+                "parsedcomment",
+                "minor",
+                "len",
+                "sha1",
+                "content",
+                "token"
+            ],
+            "flags": [
+                "newold",
+                "startend",
+                "user",
+                "excludeuser",
+                "prefix",
+                "namespace"
+            ]
+        },
+        "embeddedin": {
+            "prefix": "ei",
+            "limit": true,
+            "continue": true,
+            "params": {
+                "filterredir": {
+                    "type": "value",
+                    "possible": [
+                        "all",
+                        "redirects",
+                        "nonredirects"
+                    ]
+                }
+            },
+            "flags": [
+                "count",
+                "title",
+                "generator",
+                "namespace"
+            ]
+        },
+        "filearchive": {
+            "prefix": "fa",
+            "limit": true,
+            "continue": "from",
+            "params": {
+                "sha1": {
+                    "type": "string"
+                },
+                "sha1base36": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "sha1",
+                "timestamp",
+                "user",
+                "size",
+                "dimensions",
+                "description",
+                "parseddescription",
+                "mime",
+                "metadata",
+                "bitdepth"
+            ],
+            "flags": [
+                "fromto",
+                "prefix",
+                "ascdesc"
+            ]
+        },
+        "imageusage": {
+            "prefix": "iu",
+            "continue": true,
+            "limit": true,
+            "filterredir": true,
+            "count": true,
+            "redirect": true,
+            "params": {},
+            "flags": [
+                "title",
+                "generator",
+                "namespace"
+            ]
+        },
+        "iwbacklinks": {
+            "prefix": "iwbl",
+            "continue": true,
+            "limit": true,
+            "params": {},
+            "prop": [
+                "iwprefix",
+                "iwtitle"
+            ],
+            "flags": [
+                "title",
+                "prefix",
+                "generator"
+            ]
+        },
+        "langbacklinks": {
+            "prefix": "lbl",
+            "continue": true,
+            "limit": true,
+            "params": {},
+            "prop": [
+                "lllang",
+                "lltitle"
+            ],
+            "flags": [
+                "lang",
+                "title",
+                "generator"
+            ]
+        },
+        "logevents": {
+            "prefix": "le",
+            "limit": true,
+            "continue": "start",
+            "params": {
+                "type": {
+                    "type": "values",
+                    "possible": [
+                        "block",
+                        "protect",
+                        "rights",
+                        "delete",
+                        "upload",
+                        "move",
+                        "import",
+                        "patrol",
+                        "merge",
+                        "suppress",
+                        "editaccnt",
+                        "abusefilter",
+                        "piggyback",
+                        "useravatar",
+                        "phalanx",
+                        "phalanxemail",
+                        "renameuser",
+                        "chatban",
+                        "chatconnect",
+                        "templateclassification",
+                        "newusers"
+                    ]
+                },
+                "action": {
+                    "type": "values",
+                    "possible": [
+                        "block/block",
+                        "block/unblock",
+                        "block/reblock",
+                        "protect/protect",
+                        "protect/modify",
+                        "protect/unprotect",
+                        "protect/move_prot",
+                        "rights/rights",
+                        "rights/autopromote",
+                        "upload/upload",
+                        "upload/overwrite",
+                        "upload/revert",
+                        "import/upload",
+                        "import/interwiki",
+                        "merge/merge",
+                        "suppress/block",
+                        "suppress/reblock",
+                        "editaccnt/mailchange",
+                        "editaccnt/passchange",
+                        "editaccnt/realnamechange",
+                        "editaccnt/closeaccnt",
+                        "suppress/hide-afl",
+                        "suppress/unhide-afl",
+                        "useravatar/avatar_chn",
+                        "useravatar/avatar_rem",
+                        "phalanx/add",
+                        "phalanx/edit",
+                        "phalanx/delete",
+                        "phalanxemail/add",
+                        "phalanxemail/edit",
+                        "phalanxemail/delete",
+                        "chatconnect/chatconnect"
+                    ]
+                },
+                "tag": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "ids",
+                "title",
+                "type",
+                "user",
+                "userid",
+                "timestamp",
+                "comment",
+                "parsedcomment",
+                "details",
+                "tags"
+            ],
+            "flags": [
+                "newold",
+                "startend",
+                "user",
+                "title",
+                "prefix"
+            ]
+        },
+        "recentchanges": {
+            "prefix": "rc",
+            "continue": "start",
+            "limit": true,
+            "params": {
+                "tag": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "values",
+                    "possible": [
+                        "patrol"
+                    ]
+                },
+                "type": {
+                    "type": "values",
+                    "possible": [
+                        "edit",
+                        "new",
+                        "log"
+                    ]
+                }
+            },
+            "prop": [
+                "user",
+                "userid",
+                "comment",
+                "parsedcomment",
+                "flags",
+                "timestamp",
+                "title",
+                "ids",
+                "sizes",
+                "redirect",
+                "patrolled",
+                "loginfo",
+                "wikiamode",
+                "tags"
+            ],
+            "show": [
+                "minor",
+                "bot",
+                "anon",
+                "redirect",
+                "patrolled"
+            ],
+            "flags": [
+                "newold",
+                "startend",
+                "user",
+                "excludeuser",
+                "namespace"
+            ]
+        },
+        "tags": {
+            "prefix": "tg",
+            "limit": true,
+            "continue": true,
+            "params": {},
+            "prop": [
+                "name",
+                "displayname",
+                "description",
+                "hitcount"
+            ]
+        },
+        "usercontribs": {
+            "prefix": "uc",
+            "limit": true,
+            "continue": true,
+            "params": {
+                "user": {
+                    "type": "array",
+                    "eltype": "string"
+                },
+                "userprefix": {
+                    "type": "string"
+                },
+                "tag": {
+                    "type": "string"
+                },
+                "toponly": {
+                    "type": "boolean"
+                }
+            },
+            "prop": [
+                "ids",
+                "title",
+                "timestamp",
+                "comment",
+                "parsedcomment",
+                "size",
+                "flags",
+                "patrolled",
+                "wikiamode",
+                "tags"
+            ],
+            "show": [
+                "minor",
+                "patrolled"
+            ],
+            "flags": [
+                "newold",
+                "startend",
+                "namespace"
+            ]
+        },
+        "watchlist": {
+            "prefix": "wl",
+            "limit": true,
+            "continue": "start",
+            "params": {
+                "allrev": {
+                    "type": "boolean"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "ids",
+                "title",
+                "flags",
+                "user",
+                "userid",
+                "comment",
+                "parsedcomment",
+                "timestamp",
+                "patrol",
+                "sizes",
+                "wikiamode",
+                "notificationtimestamp",
+                "loginfo"
+            ],
+            "show": [
+                "minor",
+                "bot",
+                "anon",
+                "patrolled"
+            ],
+            "flags": [
+                "newold",
+                "startend",
+                "user",
+                "excludeuser",
+                "namespace"
+            ]
+        },
+        "watchlistraw": {
+            "prefix": "wr",
+            "continue": true,
+            "limit": true,
+            "params": {
+                "owner": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "changed"
+            ],
+            "show": [
+                "changed"
+            ],
+            "flags": [
+                "generator",
+                "namespace"
+            ]
+        },
+        "exturlusage": {
+            "prefix": "eu",
+            "limit": true,
+            "continue": "offset",
+            "params": {
+                "protocol": {
+                    "type": "values",
+                    "possible": [
+                        "http",
+                        "https",
+                        "ftp",
+                        "irc",
+                        "ircs",
+                        "gopher",
+                        "telnet",
+                        "nntp",
+                        "worldwind",
+                        "mailto",
+                        "news",
+                        "svn",
+                        "git",
+                        "mms",
+                        "xmpp"
+                    ]
+                },
+                "query": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "ids",
+                "title",
+                "url"
+            ],
+            "flags": [
+                "generator",
+                "namespace"
+            ]
+        },
+        "users": {
+            "prefix": "us",
+            "params": {
+                "users": {
+                    "type": "array",
+                    "eltype": "string"
+                },
+                "ids": {
+                    "type": "array",
+                    "eltype": "number"
+                },
+                "token": {
+                    "type": "values",
+                    "possible": [
+                        "userrights"
+                    ]
+                }
+            },
+            "prop": [
+                "blockinfo",
+                "localblockinfo",
+                "groups",
+                "implicitgroups",
+                "rights",
+                "editcount",
+                "registration",
+                "emailable",
+                "gender"
+            ]
+        },
+        "random": {
+            "prefix": "rn",
+            "params": {},
+            "flags": [
+                "redirect",
+                "limit",
+                "namespace"
+            ]
+        },
+        "protectedtitles": {
+            "prefix": "pt",
+            "limit": true,
+            "continue": "start",
+            "params": {
+                "end": {
+                    "type": "string"
+                },
+                "dir": {
+                    "type": "values",
+                    "possible": [
+                        "newer",
+                        "older"
+                    ]
+                },
+                "level": {
+                    "type": "values",
+                    "possible": [
+                        "loggedin",
+                        "autoconfirmed",
+                        "sysop"
+                    ]
+                }
+            },
+            "prop": [
+                "timestamp",
+                "user",
+                "userid",
+                "comment",
+                "parsedcomment",
+                "expiry",
+                "level"
+            ],
+            "flags": [
+                "generator",
+                "namespace"
+            ]
+        },
+        "querypage": {
+            "prefix": "qp",
+            "continue": "offset",
+            "limit": true,
+            "params": {
+                "page": {
+                    "type": "value",
+                    "possible": [
+                        "Ancientpages",
+                        "BrokenRedirects",
+                        "Deadendpages",
+                        "Disambiguations",
+                        "DoubleRedirects",
+                        "Listredirects",
+                        "Lonelypages",
+                        "Longpages",
+                        "Mostcategories",
+                        "Mostimages",
+                        "Mostlinkedcategories",
+                        "Mostlinkedtemplates",
+                        "Mostlinked",
+                        "Mostrevisions",
+                        "Fewestrevisions",
+                        "Shortpages",
+                        "Uncategorizedcategories",
+                        "Uncategorizedpages",
+                        "Uncategorizedimages",
+                        "Uncategorizedtemplates",
+                        "Unusedcategories",
+                        "Unusedimages",
+                        "Wantedcategories",
+                        "Wantedfiles",
+                        "Wantedpages",
+                        "Wantedtemplates",
+                        "Unwatchedpages",
+                        "Unusedtemplates",
+                        "Withoutinterwiki",
+                        "Mostpopularcategories",
+                        "MostLinkedFilesInContent",
+                        "UnusedVideos",
+                        "Withoutimages",
+                        "Nonportableinfoboxes",
+                        "Popularpages",
+                        "Pageswithoutinfobox",
+                        "Templateswithouttype",
+                        "AllInfoboxes"
+                    ]
+                }
+            },
+            "flags": [
+                "generator"
+            ]
+        },
+        "wkdomains": {
+            "prefix": "wk",
+            "params": {
+                "wikia": {
+                    "type": "number"
+                },
+                "active": {
+                    "type": "boolean"
+                },
+                "from": {
+                    "type": "number"
+                },
+                "to": {
+                    "type": "number"
+                },
+                "countonly": {
+                    "type": "boolean"
+                },
+                "limit": {
+                    "type": "number"
+                }
+            },
+            "flags": [
+                "lang"
+            ]
+        },
+        "checkuser": {
+            "prefix": "cu",
+            "params": {
+                "request": {
+                    "type": "value",
+                    "possible": [
+                        "userips",
+                        "edits",
+                        "ipusers"
+                    ],
+                    "required": true
+                },
+                "target": {
+                    "type": "string",
+                    "required": true
+                },
+                "reason": {
+                    "type": "string"
+                },
+                "timecond": {
+                    "type": "string"
+                },
+                "xff": {
+                    "type": "boolean"
+                }
+            },
+            "flags": [
+                "limit"
+            ]
+        },
+        "checkuserlog": {
+            "prefix": "cul",
+            "limit": true,
+            "continue": "from",
+            "params": {
+                "target": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "timestamp"
+                }
+            },
+            "flags": [
+                "user"
+            ]
+        },
+        "abuselog": {
+            "prefix": "afl",
+            "continue": "start",
+            "limit": true,
+            "params": {
+                "page": {
+                    "type": "string"
+                },
+                "filter": {
+                    "type": "number"
+                }
+            },
+            "prop": [
+                "ids",
+                "filter",
+                "user",
+                "ip",
+                "title",
+                "action",
+                "details",
+                "result",
+                "timestamp",
+                "hidden"
+            ],
+            "flags": [
+                "newold",
+                "startend",
+                "user"
+            ]
+        },
+        "abusefilters": {
+            "prefix": "abf",
+            "continue": "startid",
+            "limit": true,
+            "params": {
+                "endid": {
+                    "type": "number"
+                }
+            },
+            "prop": [
+                "id",
+                "description",
+                "pattern",
+                "actions",
+                "hits",
+                "comments",
+                "lasteditor",
+                "lastedittime"
+            ],
+            "show": [
+                "enabled",
+                "deleted",
+                "private"
+            ],
+            "flags": [
+                "newold"
+            ]
+        },
+        "unconvertedinfoboxes": {},
+        "allinfoboxes": {},
+        "firstcontributions": {
+            "prefix": "fc",
+            "continue": "after",
+            "limit": true,
+            "params": {
+                "before": {
+                    "type": "timestamp"
+                }
+            },
+            "flags": [
+                "newold"
+            ]
+        },
+        "groupmembers": {
+            "prefix": "gm",
+            "continue": "offset",
+            "limit": true,
+            "params": {
+                "groups": {
+                    "type": "array",
+                    "eltype": "string",
+                    "required": true
+                }
+            }
+        }
+    },
+    "meta": {
+        "siteinfo": {
+            "prefix": "si",
+            "params": {
+                "filteriw": {
+                    "type": "value",
+                    "possible": [
+                        "local",
+                        "!local"
+                    ]
+                },
+                "showalldb": {
+                    "type": "boolean"
+                },
+                "numberingroup": {
+                    "type": "boolean"
+                },
+                "inlanguagecode": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "general",
+                "namespaces",
+                "namespacealiases",
+                "specialpagealiases",
+                "magicwords",
+                "interwikimap",
+                "dbrepllag",
+                "statistics",
+                "usergroups",
+                "extensions",
+                "fileextensions",
+                "rightsinfo",
+                "languages",
+                "skins",
+                "extensiontags",
+                "functionhooks",
+                "showhooks",
+                "protocols",
+                "category",
+                "variables",
+                "wikidesc"
+            ]
+        },
+        "userinfo": {
+            "prefix": "ui",
+            "params": {},
+            "prop": [
+                "blockinfo",
+                "hasmsg",
+                "groups",
+                "implicitgroups",
+                "rights",
+                "changeablegroups",
+                "options",
+                "preferencestoken",
+                "editcount",
+                "ratelimits",
+                "email",
+                "realname",
+                "acceptlang",
+                "registrationdate"
+            ]
+        },
+        "allmessages": {
+            "prefix": "am",
+            "params": {
+                "messages": {
+                    "type": "array",
+                    "eltype": "string"
+                },
+                "enableparser": {
+                    "type": "boolean"
+                },
+                "nocontent": {
+                    "type": "boolean"
+                },
+                "includelocal": {
+                    "type": "boolean"
+                },
+                "args": {
+                    "type": "array",
+                    "eltype": "string"
+                },
+                "filter": {
+                    "type": "string"
+                },
+                "customized": {
+                    "type": "value",
+                    "possible": [
+                        "all",
+                        "modified",
+                        "unmodified"
+                    ]
+                },
+                "from": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                }
+            },
+            "prop": [
+                "default"
+            ],
+            "flags": [
+                "lang",
+                "title",
+                "prefix"
+            ]
+        }
+    }
+}

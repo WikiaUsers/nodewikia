@@ -1,0 +1,148 @@
+* action=geocode *
+  API module for geocoding.
+
+Parameters:
+  locations           - The locations to geocode
+                        This parameter is required
+                        Maximum number of values 50 (500 for bots)
+  service             - The geocoding service to use
+                        One value: google, geocoderus
+  props               - 
+                        Values (separate with '|'): lat, lon, alt
+                        Default: lat|lon
+
+* action=licenses *
+  Get media license dropdown HTML.
+
+Parameters:
+  default             - The default (selected) value
+                        Default: није изабрано
+  id                  - The value for the "id" attribute
+  name                - The value for the "name" attribute
+                        This parameter is required
+
+
+* action=scribunto-console *
+  Internal module for servicing XHR requests from the Scribunto console
+
+Parameters:
+  title               - The module title to test
+  content             - The new content of the module
+  session             - 
+  question            - The next line to evaluate as a script
+                        This parameter is required
+  clear               - Set this to true to clear the current session state
+
+* action=tagsreport *
+  This module provides tags report data for articles
+
+Parameters:
+  title               - Query by article title (string)
+  tag                 - Query by tag type (string)
+  limit               - How many tags to return
+                        No more than 500 (5000 for bots) allowed
+                        Default: 75
+  continue            - When more results are available, use this to continue
+
+* action=blogs *
+* action=titleblacklist (tb) *
+  Validate an article title, filename, or username against the TitleBlacklist.
+
+Parameters:
+  tbtitle             - The string to validate against the blacklist
+                        This parameter is required
+  tbaction            - The thing you're trying to do
+                        One value: create, edit, upload, createtalk, createpage
+                        Default: edit
+
+* action=apimediasearch *
+* action=addmediatemporary *
+* action=addmediapermanent *
+* action=videopreview *
+* action=templatesearch *
+* action=templatesuggestions *
+* action=templateparameters *
+
+* action=opensearch *
+  Search the wiki using the OpenSearch protocol
+
+Parameters:
+  search              - Search string
+  limit               - Maximum amount of results to return
+                        No more than 100 (100 for bots) allowed
+                        Default: 10
+  namespace           - Namespaces to search
+                        Values (separate with '|'): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 110, 111, 112, 113, 114, 115, 116, 117, 118,
+                            119, 122, 123, 150, 151, 1200, 1201, 1202, 2000, 2001, 2002, 500, 501, 502, 503, 420, 421, 828, 829
+                        Maximum number of values 50 (500 for bots)
+                        Default: 0
+  suggest             - Do nothing if $wgEnableOpenSearchSuggest is false
+
+* action=feedcontributions *
+  Returns a user contributions feed
+
+Parameters:
+  feedformat          - The format of the feed
+                        One value: rss, atom
+                        Default: rss
+  user                - What users to get the contributions for
+                        This parameter is required
+  namespace           - What namespace to filter the contributions by
+                        Values (separate with '|'): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 110, 111, 112, 113, 114, 115, 116, 117, 118,
+                            119, 122, 123, 150, 151, 1200, 1201, 1202, 2000, 2001, 2002, 500, 501, 502, 503, 420, 421, 828, 829
+                        Maximum number of values 50 (500 for bots)
+  year                - From year (and earlier)
+  month               - From month (and earlier)
+  tagfilter           - Filter contributions that have these tags
+                        Values (separate with '|'): WelcomeReply, IP edit to user page, batch_upload, Help, New, NewAR, Spam_UP, NewbieBlog, tor,
+                            visualeditor, visualeditor-needcheck, visualeditor-switched
+                        Default: 
+  deletedonly         - Show only deleted contributions
+  toponly             - Only show edits that are latest revisions
+  showsizediff        - Show the size difference between revisions. Disabled in Miser Mode
+
+* action=feedwatchlist *
+  Returns a watchlist feed
+
+Parameters:
+  feedformat          - The format of the feed
+                        One value: rss, atom
+                        Default: rss
+  hours               - List pages modified within this many hours from now
+                        The value must be between 1 and 72
+                        Default: 24
+  allrev              - Include multiple revisions of the same page within given timeframe
+  wlowner             - The user whose watchlist you want (must be accompanied by wltoken if it's not you)
+  wltoken             - Security token that requested user set in their preferences
+  wlexcludeuser       - A user whose edits should not be shown in the watchlist
+  linktodiffs         - Link to change differences instead of article pages
+
+* action=help *
+  Display this help screen. Or the help screen for the specified module
+Parameters:
+  modules             - List of module names (value of the action= parameter)
+  querymodules        - List of query module names (value of prop=, meta= or list= parameter)
+
+* action=paraminfo *
+  Obtain information about certain API parameters and errors
+Parameters:
+  modules             - List of module names (value of the action= parameter)
+  querymodules        - List of query module names (value of prop=, meta= or list= parameter)
+  mainmodule          - Get information about the main (top-level) module as well
+  pagesetmodule       - Get information about the pageset module (providing titles= and friends) as well
+  formatmodules       - List of format module names (value of format= parameter)
+                        Values (separate with '|'): dbg, dbgfm, dump, dumpfm, json, jsonfm, php, phpfm, push, rawfm, txt, txtfm, wddx, wddxfm, xml,
+                            xmlfm, yaml, yamlfm
+
+* action=rsd *
+  Export an RSD (Really Simple Discovery) schema
+
+* action=patrol *
+  Patrol a page or revision
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  token               - Patrol token obtained from list=recentchanges
+  rcid                - Recentchanges ID to patrol
+                        This parameter is required

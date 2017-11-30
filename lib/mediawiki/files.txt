@@ -1,0 +1,68 @@
+* action=imagecrop (img) *
+   This module is used to return one cropped image from specified article 
+  No example because article id is specific for every wikia 
+
+Parameters:
+  imgId               - article Id (integer)
+                        The value must be no less than 0
+  imgSize             - size of cropped image (integer)
+                        The value must be no less than 0
+  imgHeight           - image Height used for right cropped image proportions (integer)
+                        The value must be no less than 0
+  imgFailOnFileNotFound - force API call to fail if image does not exist (boolean)
+                        Maximum number of values 50 (500 for bots)
+
+* action=imageserving (wis) *
+  This module is used to return one image from specified article given either the article id or article title (with prefix if applicable).
+
+Parameters:
+  wisId               - article Id (integer)
+                        The value must be no less than 0
+  wisTitle            - article Title (string)
+
+* action=upload *
+  Upload a file, or get the status of pending uploads. Several methods are available:
+   * Upload file contents directly, using the "file" parameter
+   * Have the MediaWiki server fetch a file from a URL, using the "url" parameter
+   * Complete an earlier upload that failed due to warnings, using the "filekey" parameter
+  Note that the HTTP POST must be done as a file upload (i.e. using multipart/form-data) when
+  sending the "file".  Also you must get and send an edit token before doing any upload stuff
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  filename            - Target filename
+  comment             - Upload comment. Also used as the initial page text for new files if "text" is not specified
+                        Default: 
+  text                - Initial page text for new files
+  token               - Edit token. You can get one of these through prop=info
+  watchlist           - Unconditionally add or remove the page from your watchlist, use preferences or do not change watch
+                        One value: watch, preferences, nochange
+                        Default: preferences
+  ignorewarnings      - Ignore any warnings
+  file                - File contents
+  url                 - URL to fetch the file from
+  filekey             - Key that identifies a previous upload that was stashed temporarily.
+  stash               - If set, the server will not add the file to the repository and stash it temporarily.
+  filesize            - Filesize of entire upload
+                        The value must be between 0 and 10485760
+  offset              - Offset of chunk in bytes
+                        The value must be no less than 0
+  chunk               - Chunk contents
+  asyncdownload       - Make fetching a URL asynchronous
+  leavemessage        - If asyncdownload is used, leave a message on the user talk page if finished
+  statuskey           - Fetch the upload status for this file key
+
+* action=filerevert *
+  Revert a file to an old version
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  filename            - Target filename
+                        This parameter is required
+  comment             - Upload comment
+                        Default: 
+  archivename         - Archive name of the revision to revert to
+                        This parameter is required
+  token               - Edit token. You can get one of these through prop=info

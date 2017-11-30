@@ -1,0 +1,59 @@
+* action=infobox *
+  This module provides infobox parser
+
+Parameters:
+  text                - Infobox to parse (xml string)
+  title               - Title of page the text belongs to
+  args                - Variable list to use during parse (json format)
+Examples: api.php?action=infobox&text=<infobox><data source="test" /></infobox>&args={"test": "test value"}
+
+* action=parse *
+  Parses wikitext and returns parser output
+
+Parameters:
+  title               - Title of page the text belongs to
+                        Default: API
+  text                - Wikitext to parse
+  summary             - Summary to parse
+  page                - Parse the content of this page. Cannot be used together with text and title
+  pageid              - Parse the content of this page. Overrides page
+  redirects           - If the page or the pageid parameter is set to a redirect, resolve it
+  oldid               - Parse the content of this revision. Overrides page and pageid
+  prop                - Which pieces of information to get
+                         text           - Gives the parsed text of the wikitext
+                         langlinks      - Gives the language links in the parsed wikitext
+                         categories     - Gives the categories in the parsed wikitext
+                         categorieshtml - Gives the HTML version of the categories
+                         languageshtml  - Gives the HTML version of the language links
+                         links          - Gives the internal links in the parsed wikitext
+                         templates      - Gives the templates in the parsed wikitext
+                         images         - Gives the images in the parsed wikitext
+                         externallinks  - Gives the external links in the parsed wikitext
+                         sections       - Gives the sections in the parsed wikitext
+                         revid          - Adds the revision ID of the parsed page
+                         displaytitle   - Adds the title of the parsed wikitext
+                         headitems      - Gives items to put in the <head> of the page
+                         headhtml       - Gives parsed <head> of the page
+                         iwlinks        - Gives interwiki links in the parsed wikitext
+                         wikitext       - Gives the original wikitext that was parsed
+                        Values (separate with '|'): text, langlinks, languageshtml, categories, categorieshtml, links, templates, images, externallinks,
+                            sections, revid, displaytitle, headitems, headhtml, iwlinks, wikitext
+                        Default: text|langlinks|categories|links|templates|images|externallinks|sections|revid|displaytitle
+  pst                 - Do a pre-save transform on the input before parsing it
+                        Ignored if page, pageid or oldid is used
+  onlypst             - Do a pre-save transform (PST) on the input, but don't parse it
+                        Returns the same wikitext, after a PST has been applied. Ignored if page, pageid or oldid is used
+  uselang             - Which language to parse the request in
+  section             - Only retrieve the content of this section number
+  disablepp           - Disable the PP Report from the parser output
+
+* action=expandtemplates *
+  Expands all templates in wikitext
+
+Parameters:
+  title               - Title of page
+                        Default: API
+  text                - Wikitext to convert
+                        This parameter is required
+  generatexml         - Generate XML parse tree
+  includecomments     - Whether to include HTML comments in the output

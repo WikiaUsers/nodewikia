@@ -1,0 +1,181 @@
+* action=delete *
+  Delete a page
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  title               - Title of the page you want to delete. Cannot be used together with pageid
+  pageid              - Page ID of the page you want to delete. Cannot be used together with title
+  token               - A delete token previously retrieved through prop=info
+  reason              - Reason for the deletion. If not set, an automatically generated reason will be used
+  watchlist           - Unconditionally add or remove the page from your watchlist, use preferences or do not change watch
+                        One value: watch, unwatch, preferences, nochange
+                        Default: preferences
+  oldimage            - The name of the old image to delete as provided by iiprop=archivename
+
+* action=compare *
+  Get the difference between 2 pages
+  You must pass a revision number or a page title for each part (1 and 2)
+
+Parameters:
+  fromtitle           - First title to compare
+  fromrev             - First revision to compare
+  totitle             - Second title to compare
+  torev               - Second revision to compare
+
+* action=purge *
+  Purge the cache for the given titles.
+  Requires a POST request if the user is not logged in.
+
+This module requires write rights
+Parameters:
+  titles              - A list of titles to work on
+  pageids             - A list of page IDs to work on
+                        Maximum number of values 50 (500 for bots)
+  revids              - A list of revision IDs to work on
+                        Maximum number of values 50 (500 for bots)
+  forcelinkupdate     - Update the links tables
+
+* action=rollback *
+  Undo the last edit to the page. If the last user who edited the page made multiple edits in a row,
+  they will all be rolled back
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  title               - Title of the page you want to rollback.
+                        This parameter is required
+  user                - Name of the user whose edits are to be rolled back. If set incorrectly, you'll get a badtoken error.
+                        This parameter is required
+  token               - A rollback token previously retrieved through prop=revisions
+  summary             - Custom edit summary. If not set, default summary will be used
+  markbot             - Mark the reverted edits and the revert as bot edits
+  watchlist           - Unconditionally add or remove the page from your watchlist, use preferences or do not change watch
+                        One value: watch, unwatch, preferences, nochange
+                        Default: preferences
+
+* action=undelete *
+  Restore certain revisions of a deleted page. A list of deleted revisions (including timestamps) can be
+  retrieved through list=deletedrevs
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  title               - Title of the page you want to restore
+                        This parameter is required
+  token               - An undelete token previously retrieved through list=deletedrevs
+  reason              - Reason for restoring (optional)
+                        Default: 
+  timestamps          - Timestamps of the revisions to restore. If not set, all revisions will be restored.
+                        Maximum number of values 50 (500 for bots)
+  watchlist           - Unconditionally add or remove the page from your watchlist, use preferences or do not change watch
+                        One value: watch, unwatch, preferences, nochange
+                        Default: preferences
+
+* action=protect *
+  Change the protection level of a page
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  title               - Title of the page you want to (un)protect
+                        This parameter is required
+  token               - A protect token previously retrieved through prop=info
+  protections         - Pipe-separated list of protection levels, formatted action=group (e.g. edit=sysop)
+                        This parameter is required
+  expiry              - Expiry timestamps. If only one timestamp is set, it'll be used for all protections.
+                        Use 'infinite', 'indefinite' or 'never', for a neverexpiring protection.
+                        Default: infinite
+  reason              - Reason for (un)protecting (optional)
+                        Default: 
+  cascade             - Enable cascading protection (i.e. protect pages included in this page)
+                        Ignored if not all protection levels are 'sysop' or 'protect'
+  watchlist           - Unconditionally add or remove the page from your watchlist, use preferences or do not change watch
+                        One value: watch, unwatch, preferences, nochange
+                        Default: preferences
+
+* action=move *
+  Move a page
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  from                - Title of the page you want to move. Cannot be used together with fromid
+  fromid              - Page ID of the page you want to move. Cannot be used together with from
+  to                  - Title you want to rename the page to
+                        This parameter is required
+  token               - A move token previously retrieved through prop=info
+  reason              - Reason for the move (optional)
+  movetalk            - Move the talk page, if it exists
+  movesubpages        - Move subpages, if applicable
+  noredirect          - Don't create a redirect
+  watchlist           - Unconditionally add or remove the page from your watchlist, use preferences or do not change watch
+                        One value: watch, unwatch, preferences, nochange
+                        Default: preferences
+  ignorewarnings      - Ignore any warnings
+
+* action=edit *
+  Create and edit pages.
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  title               - Page title
+                        This parameter is required
+  section             - Section number. 0 for the top section, 'new' for a new section
+  sectiontitle        - The title for a new section
+  text                - Page content
+  token               - Edit token. You can get one of these through prop=info.
+                        The token should always be sent as the last parameter, or at least, after the text parameter
+  summary             - Edit summary. Also section title when section=new
+  minor               - Minor edit
+  notminor            - Non-minor edit
+  bot                 - Mark this edit as bot
+  basetimestamp       - Timestamp of the base revision (obtained through prop=revisions&rvprop=timestamp).
+                        Used to detect edit conflicts; leave unset to ignore conflicts.
+  starttimestamp      - Timestamp when you obtained the edit token.
+                        Used to detect edit conflicts; leave unset to ignore conflicts
+  recreate            - Override any errors about the article having been deleted in the meantime
+  createonly          - Don't edit the page if it exists already
+  nocreate            - Throw an error if the page doesn't exist
+  watchlist           - Unconditionally add or remove the page from your watchlist, use preferences or do not change watch
+                        One value: watch, unwatch, preferences, nochange
+                        Default: preferences
+  md5                 - The MD5 hash of the text parameter, or the prependtext and appendtext parameters concatenated.
+                        If set, the edit won't be done unless the hash is correct
+  prependtext         - Add this text to the beginning of the page. Overrides text
+  appendtext          - Add this text to the end of the page. Overrides text
+  undo                - Undo this revision. Overrides text, prependtext and appendtext
+  undoafter           - Undo all revisions from undo to this one. If not set, just undo one revision
+  redirect            - Automatically resolve redirects
+
+* action=watch *
+  Add or remove a page from/to the current user's watchlist
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  title               - The page to (un)watch
+                        This parameter is required
+  unwatch             - If set the page will be unwatched rather than watched
+  token               - A token previously acquired via prop=info
+
+* action=import *
+  Import a page from another wiki, or an XML file.
+  Note that the HTTP POST must be done as a file upload (i.e. using multipart/form-data) when
+  sending a file for the "xml" parameter.
+
+This module requires write rights
+This module only accepts POST requests
+Parameters:
+  token               - Import token obtained through prop=info
+  summary             - Import summary
+  xml                 - Uploaded XML file
+  interwikisource     - For interwiki imports: wiki to import from
+                        One value: 
+  interwikipage       - For interwiki imports: page to import
+  fullhistory         - For interwiki imports: import the full history, not just the current version
+  templates           - For interwiki imports: import all included templates as well
+  namespace           - For interwiki imports: import to this namespace
+                        One value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 110, 111, 112, 113, 114, 115, 116, 117, 118,
+                            119, 122, 123, 150, 151, 1200, 1201, 1202, 2000, 2001, 2002, 500, 501, 502, 503, 420, 421, 828, 829
