@@ -1,9 +1,10 @@
 {
     "name": "nodewikia",
-    "version": "0.0.3",
-    "description": "Library for handling Wikia and MediaWiki API",
+    "version": "0.0.4",
+    "description": "Library for handling Fandom and MediaWiki API",
     "keywords": [
         "wikia",
+        "fandom",
         "mediawiki",
         "api"
     ],
@@ -24,10 +25,7 @@
     },
     "dependencies": {
         "md5": ">=2.2.1",
-        "request": "^2.34",
-        "request-promise-native": ">=1.0.0"
-    },
-    "engines": {
-        "node": ">=8.0.0"
+        "request": ">=2.88.0",
+        "request-promise-native": ">=1.0.7"
     }
 }
