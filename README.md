@@ -1,2 +1,2 @@
 # nodewikia
-[Coming soon](http://dev.wikia.com/wiki/User:KockaAdmiralac/nodewikia).
+[Coming soon](https://dev.fandom.com/wiki/User:KockaAdmiralac/nodewikia).
