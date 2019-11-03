@@ -1,6 +1,6 @@
 {
     "name": "nodewikia",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Library for handling Fandom and MediaWiki API",
     "keywords": [
         "wikia",
@@ -8,24 +8,35 @@
         "mediawiki",
         "api"
     ],
+    "homepage": "https://dev.fandom.com/wiki/User:KockaAdmiralac/nodewikia",
+    "bugs": {
+        "url": "https://github.com/WikiaUsers/nodewikia/issues",
+        "email": "git@kocka.tech"
+    },
     "license": "CC-BY-SA-4.0",
     "author": {
         "name": "KockaAdmiralac",
         "email": "1405223@gmail.com",
-        "url": "https://github.com/KockaAdmiralac"
+        "url": "https://kocka.tech"
     },
     "contributors": [],
-    "main": "lib/main.js",
     "files": [
         "lib/"
     ],
+    "main": "lib/main.js",
     "repository": {
         "type": "git",
-        "url": "git://github.com/WikiaUsers/nodewikia.git"
+        "url": "https://github.com/WikiaUsers/nodewikia.git"
     },
     "dependencies": {
         "md5": ">=2.2.1",
         "request": ">=2.88.0",
         "request-promise-native": ">=1.0.7"
+    },
+    "devDependencies": {
+        "eslint": ">=6.6.0"
+    },
+    "engines": {
+        "node": ">=10.16.3"
     }
 }
