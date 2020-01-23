@@ -1,6 +1,6 @@
 {
     "name": "nodewikia",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Library for handling Fandom and MediaWiki API",
     "keywords": [
         "wikia",
