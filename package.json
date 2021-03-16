@@ -1,6 +1,6 @@
 {
     "name": "nodewikia",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "Library for handling Fandom and MediaWiki API",
     "keywords": [
         "wikia",
@@ -29,12 +29,12 @@
         "url": "https://github.com/WikiaUsers/nodewikia.git"
     },
     "dependencies": {
-        "md5": ">=2.2.1",
+        "md5": ">=2.3.0",
         "request": ">=2.88.2",
-        "request-promise-native": ">=1.0.8"
+        "request-promise-native": ">=1.0.9"
     },
     "devDependencies": {
-        "eslint": ">=6.8.0"
+        "eslint": ">=7.22.0"
     },
     "engines": {
         "node": ">=10.16.3"
